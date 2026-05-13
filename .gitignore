@@ -1,1 +1,51 @@
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environments
+.venv
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# Runtime data (auto-generated, not committed)
+data/inventory.db
+data/inventory.json
+data/*.xlsx
+data/*.csv
+data/chat.log
+data/history/
+
+# ngrok binary (should be downloaded separately)
+ngrok.exe
+ngrok
+
+# Sisyphus internal
+.sisyphus/
+
+# Temporary files
+tmp/
+temp/
+*.tmp

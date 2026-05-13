@@ -1,0 +1,7 @@
+Name,Part Number,Quantity,Owner,Location,Notes
+R1,10kΩ resistor,100,张三,仓库A,
+R2,100Ω resistor,200,李四,仓库B,
+C1,10μF capacitor,500,张三,仓库A,
+C2,100nF capacitor,300,王五,仓库C,
+U1,STM32F103,50,李四,仓库B,
+U2,NOR Flash 64Mb,25,王五,仓库C,

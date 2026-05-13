@@ -1,0 +1,71 @@
+===========================================
+BOM 库存机器人 - 启动命令指南
+===========================================
+
+## 环境变量（必须配置）
+
+在 Windows PowerShell 中执行：
+
+```powershell
+$env:LARK_APP_ID = "你的飞书应用ID"
+$env:LARK_APP_SECRET = "你的飞书应用密钥"
+$env:OPENAI_API_KEY = "你的OpenRouter API密钥"
+$env:OPENAI_MODEL = "openai/gpt-4o-mini"
+$env:PORT = "5000"
+```
+
+或者在系统环境变量中永久配置。
+
+## 启动步骤
+
+### 第1步：启动 ngrok（暴露本地端口）
+
+```powershell
+# 在项目目录下执行
+F:\BOM\ngrok.exe http 5000
+```
+
+执行后会显示一个公网URL，例如：
+`https://abcd-123-456-789-012.ngrok-free.app`
+
+### 第2步：配置飞书 Webhook
+
+1. 打开飞书开发者平台：https://open.feishu.cn/
+2. 进入你的机器人应用 → 事件订阅
+3. 将 ngrok 的 URL 填入请求地址：
+   `https://abcd-123-456-789-012.ngrok-free.app/webhook`
+4. 保存并验证
+
+### 第3步：启动机器人
+
+在**新的** PowerShell 窗口中执行：
+
+```powershell
+cd F:\BOM
+py feishu_bot.py
+```
+
+看到 `Running on http://0.0.0.0:5000` 即表示启动成功。
+
+## 常用命令（在飞书私聊中发送）
+
+- `上传` 或发送文件 - 上传BOM表
+- `录入` - 手动批量输入元器件
+- `查询 <关键词>` - 查询库存
+- `历史` - 查看上传历史
+- `删除 <序号>` - 删除指定批次（需权限）
+- `谁有 <料号>` - 查询物料归属
+- `库存` - 列出所有库存
+- `帮助` - 显示帮助信息
+
+## 停止机器人
+
+在运行 feishu_bot.py 的窗口中按 `Ctrl+C`。
+
+## 注意事项
+
+1. ngrok 每次启动 URL 会变，需要重新配置飞书 Webhook
+2. 首次使用需先在 `data/authorized_users.json` 中添加有删除权限的用户 open_id
+3. 确保已安装依赖：`pip install -r requirements.txt`
+
+===========================================
