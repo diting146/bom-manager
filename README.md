@@ -38,7 +38,8 @@ py feishu_bot.py
 |------|------|
 | `LARK_APP_ID` | 飞书应用 ID |
 | `LARK_APP_SECRET` | 飞书应用 Secret |
-| `OPENAI_API_KEY` | OpenRouter API Key |
+| `OPENAI_API_KEY` | OpenAI 兼容 API Key（OpenAI / OpenRouter / 本地 LLM） |
+| `OPENAI_BASE_URL` | API 地址（默认 `https://api.openai.com/v1`） |
 | `OPENAI_MODEL` | AI 模型（默认 gpt-3.5-turbo） |
 
 ## 项目结构
