@@ -30,6 +30,14 @@ Thumbs.db
 .mypy_cache/
 .pytest_cache/
 
+# Claude Code
+.claude/
+
+# Config files (user-specific, not committed)
+data/admins.json
+data/authorized_users.json
+data/cloud_sheet.json
+
 # Runtime data (auto-generated, not committed)
 data/inventory.db
 data/inventory.json
