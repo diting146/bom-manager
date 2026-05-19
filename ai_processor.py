@@ -8,7 +8,7 @@ class AIProcessor:
         if not config.OPENAI_API_KEY:
             raise ValueError("请设置 OPENAI_API_KEY 环境变量")
         self.client = OpenAI(
-            api_key=config.OPENAI_API_KEY, base_url="https://openrouter.ai/api/v1"
+            api_key=config.OPENAI_API_KEY, base_url=config.OPENAI_BASE_URL
         )
 
     def query_inventory(self, query: str, inventory: list) -> list:

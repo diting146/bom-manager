@@ -13,6 +13,8 @@ DATA_DIR = BASE_DIR / "data"
 INVENTORY_FILE = DATA_DIR / "inventory.json"
 HISTORY_DIR = DATA_DIR / "history"
 
+SQLITE_DB = DATA_DIR / "inventory.db"
+
 DATA_DIR.mkdir(exist_ok=True)
 HISTORY_DIR.mkdir(exist_ok=True)
 
@@ -20,6 +22,7 @@ HISTORY_DIR.mkdir(exist_ok=True)
 LARK_APP_ID = os.getenv("LARK_APP_ID")
 LARK_APP_SECRET = os.getenv("LARK_APP_SECRET")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-3.5-turbo")
 
 BOM_FIELDS = ["Name", "Part Number", "Quantity", "Owner", "Location", "Notes"]
